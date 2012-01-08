@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>no-herd</herd>
+  <maintainer>
+    <email>js@alien8.de</email>
+    <name>Julian Stecklina</name>
+  </maintainer>
+  <longdescription lang="en">
+    The Genode OS framework depends on the GNU C++ compiler and tool
+    chain. As most GNU compilers shipped with standard Linux
+    distributions include distro-specific patches and configurations,
+    these tools do not meet Genode's special requirements (e.g.,
+    thread-local storage configuration). Therefore, we decided to
+    provide a cross-compilation package for the community.
+  </longdescription>
+  <use>
+  </use>
+</pkgmetadata>
