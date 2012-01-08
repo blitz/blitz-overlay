@@ -14,6 +14,8 @@ KEYWORDS="~x86 ~amd64"
 SLOT="0"
 LICENSE="GPL-3 LGPL-3"
 
+RDEPEND=" amd64? ( app-emulation/emul-linux-x86-baselibs ) "
+
 S="${WORKDIR}"
 
 src_configure() {
