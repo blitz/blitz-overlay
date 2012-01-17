@@ -1,0 +1,13 @@
+diff -ru libmtp-1.1.1.orig/src/music-players.h libmtp-1.1.1/src/music-players.h
+--- libmtp-1.1.1.orig/src/music-players.h	2011-10-22 00:35:17.000000000 +0200
++++ libmtp-1.1.1/src/music-players.h	2012-01-17 02:03:33.709720996 +0100
+@@ -280,6 +280,9 @@
+   // From anonymous Sourceforge user
+   { "Samsung", 0x04e8, "GT-S5230", 0xe20c, DEVICE_FLAG_NONE },
+ 
++  // From: Ryan Sweat <rsweat@gmail.com>
++  { "Samsung", 0x04e8, "Samsung Galaxy Nexus", 0x685c,
++    DEVICE_FLAG_BROKEN_MTPGETOBJPROPLIST_ALL },
+ 
+   /*
+    * Microsoft & Intel
