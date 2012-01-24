@@ -19,7 +19,7 @@ PYTHON_DEPEND="python? 2:2.4"
 #RESTRICT_PYTHON_ABIS="3.*"
 #SUPPORT_PYTHON_ABIS="1"
 
-inherit eutils python ${AUTOTOOLIZE+autotools} ${GIT_ECLASS}
+inherit eutils python autotools ${GIT_ECLASS}
 
 if [[ ${PV} = *9999* ]]; then
 	SRC_URI=""
@@ -40,7 +40,7 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 IUSE="avahi caps debug iscsi +json +libvirtd lvm +lxc macvtap nfs \
 	nls +nova numa openvz parted pcap phyp policykit python qemu sasl selinux udev \
-	uml virtualbox virt-network xen elibc_glibc"
+	-uml virtualbox virt-network xen elibc_glibc"
 # IUSE=one : bug #293416 & bug #299011
 
 # gettext.sh command is used by the libvirt command wrappers, and it's
@@ -94,7 +94,7 @@ src_prepare() {
 	EPATCH_FORCE=yes EPATCH_SUFFIX="patch" \
 			epatch "${FILESDIR}"
 
-	[[ -n ${AUTOTOOLIZE} ]] && eautoreconf
+	eautoreconf
 }
 
 src_configure() {
@@ -154,13 +154,13 @@ src_configure() {
 	myconf="${myconf} $(use_with sasl)"
 
 	# network bits
-	myconf="${myconf} $(use_with macvtap)"
+	#myconf="${myconf} $(use_with macvtap)"
 	myconf="${myconf} $(use_with pcap libpcap)"
 
 	## other
-	myconf="${myconf} $(use_enable nls)"
-	myconf="${myconf} $(use_with python)"
-	myconf="${myconf} $(use_with json yajl)"
+	#myconf="${myconf} $(use_enable nls)"
+	#myconf="${myconf} $(use_with python)"
+	#myconf="${myconf} $(use_with json yajl)"
 
 	## stuff we don't yet support
 	myconf="${myconf} --without-netcf --without-audit"
