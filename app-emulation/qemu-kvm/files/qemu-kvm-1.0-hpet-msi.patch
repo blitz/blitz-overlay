@@ -1,0 +1,15 @@
+diff --git a/hw/hpet.c b/hw/hpet.c
+index c282c48..de2d813 100644
+--- a/hw/hpet.c
++++ b/hw/hpet.c
+@@ -736,8 +736,8 @@ static SysBusDeviceInfo hpet_device_info = {
+     .qdev.reset   = hpet_reset,
+     .init         = hpet_init,
+     .qdev.props = (Property[]) {
+-        DEFINE_PROP_UINT8("timers", HPETState, num_timers, HPET_MIN_TIMERS),
+-        DEFINE_PROP_BIT("msi", HPETState, flags, HPET_MSI_SUPPORT, false),
++        DEFINE_PROP_UINT8("timers", HPETState, num_timers, 8),
++        DEFINE_PROP_BIT("msi", HPETState, flags, HPET_MSI_SUPPORT, true),
+         DEFINE_PROP_END_OF_LIST(),
+     },
+ };
