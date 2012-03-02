@@ -8,7 +8,7 @@ inherit eutils
 
 # XXX Dependencies?
 
-DESCRIPTION="Versatile TCP analyzer"
+DESCRIPTION="A tool that generates TCP graphs"
 HOMEPAGE="http://www.tcptrace.org/"
 SRC_URI="http://www.tcptrace.org/useful/xplot.tar.gz"
 
@@ -19,3 +19,12 @@ IUSE="debug nls"
 
 S=${WORKDIR}/xplot
 
+src_configure() {
+    econf
+}
+
+src_install() {
+    dobin xplot
+    doman xplot.1
+    dodoc README
+}
